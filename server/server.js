@@ -26,6 +26,8 @@ var server = http.createServer(app);
 
 //app.use(protectJSON);
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 app.use(express.logger());                                  // Log requests to the console
 app.use(express.bodyParser());                              // Extract the data from the body of the request - this is needed by the LocalStrategy authenticate method
 app.use(express.cookieParser(config.server.cookieSecret));  // Hash cookies with this secret
@@ -46,7 +48,7 @@ app.use(function(req, res, next) {
 
 
 app.get("/", function (req, res) {
-	res.send("moo");
+	res.render("main-layout.jade", { title: "easel-chat" });
 });
 
 /*
