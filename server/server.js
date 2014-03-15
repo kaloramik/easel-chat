@@ -36,6 +36,7 @@ app.use(passport.initialize());                             // Initialize Passpo
 app.use(passport.session());                                // Use Passport's session authentication strategy - this stores the logged in user in the session and will now run on any request
 //app.use(xsrf);                                            // Add XSRF checks to the request
 //security.initialize(config.mongo.dbUrl, config.mongo.apiKey, config.security.dbName, config.security.usersCollection); // Add a Mongo strategy for handling the authentication
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
 app.use(function(req, res, next) {
   if ( req.user ) {
@@ -49,6 +50,11 @@ app.use(function(req, res, next) {
 
 app.get("/", function (req, res) {
 	res.render("main-layout.jade", { title: "easel-chat" });
+});
+
+app.get('/partials/:name', function (req, res) { 
+  var name = req.params.name;
+   res.render('partials/' + name);
 });
 
 /*

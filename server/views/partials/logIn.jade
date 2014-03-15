@@ -1,0 +1,9 @@
+div.row
+    div(class="span4 offset1")
+        div.well
+            legend Login
+            form(method='post', action = 'game', id='enter_game_form')
+              input(class="span3", placeholder="Username:", type='text', id='userName', name='userName')
+              input(class="span3", placeholder="Game Name:", type='text', id='gameName', name='gameName')
+              input(type='button', class='btn', id='create_game', onclick='createGame()', value='Create Game')
+              input(type='button', class='btn', id='join_game', onclick='joinGame()', value='Join Game')
