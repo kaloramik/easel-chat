@@ -1,5 +1,11 @@
-div.row
-    div(class="span4 offset1")
-        div.well
-            legend Login
-            h {{data.userName}}
+div.container
+    div.row
+        div(class="col-md-2 user-list")
+            h3 Users
+            li(ng-repeat="user in userList") {{user}}
+        div(class="col-md-10 game-room")
+            div.well
+                li(ng-repeat="message in messageList") {{message}}
+    div.row
+        input(class="col-md-3", placeholder="enter text", type='text', ng-model="inputData.message")
+        input(type='button', class='btn', value='send', ng-click="sendMessage()")

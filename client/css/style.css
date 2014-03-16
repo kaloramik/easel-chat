@@ -1,0 +1,13 @@
+body { padding-top: 50px; }
+
+div.user-list 
+{ 
+    border-style:solid;
+    border-width:5px;
+}
+
+div.game-room
+{ 
+    border-style:solid;
+    border-width:5px;
+}

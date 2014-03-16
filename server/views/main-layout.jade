@@ -3,14 +3,17 @@ html(lang="en", ng-app="easel-chat")
   head
     script(src="/lib/angular/angular.min.js")
     script(src="/lib/angular/angular-route.js")
+    script(src='/socket.io/socket.io.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js')
     script(src='/js/app.js')
+    script(src='/js/services.js')
     script(src='/js/controllers.js')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     title= title
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
     body
         nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
             div.navbar-header

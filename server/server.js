@@ -2,6 +2,7 @@
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
+var socketHandler = require('./socket');
 /*
 var privateKey  = fs.readFileSync(__dirname + '/cert/privatekey.pem').toString();
 var certificate = fs.readFileSync(__dirname + '/cert/certificate.pem').toString();
@@ -90,6 +91,7 @@ server.listen(config.server.listenPort, '0.0.0.0', 511, function() {
 	console.log("listening!");
 });
 console.log('Angular App Server - listening on port: ' + config.server.listenPort);
+socketHandler.init(server);
 /*
 secureServer.listen(config.server.securePort);
 console.log('Angular App Server - listening on secure port: ' + config.server.securePort);
